@@ -25,10 +25,11 @@ const Search = props => {
         color={'#25c0ff'}
         size={scaleFontSize(22)}
       />
+
       <TextInput
         ref={textInputRef}
+        placeholder={'Search'}
         style={[style.searchInput]}
-        autoFocus={true}
         value={searchInput}
         onChange={value => {
           handleSearch(value);

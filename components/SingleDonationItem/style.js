@@ -8,12 +8,12 @@ import getFontFamily from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   singleDonationItemContainer: {
-    borderWidth: 2,
     marginTop: verticalScale(5),
   },
   donationImage: {
     width: horizontalScale(140),
     height: verticalScale(170),
+    borderRadius: horizontalScale(20),
   },
   badgeContainer: {
     position: 'absolute',

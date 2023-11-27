@@ -21,28 +21,38 @@ const SingleDonationItem = props => {
   //   };
 
   return (
-    <View style={style.singleDonationItemContainer}>
-      <View>
-        <View style={style.badgeContainer}>
-          <Badge title={props.badgeTitle} />
-        </View>
-        <Image
-          resizeMode="contain"
-          source={{uri: props.uri}}
-          style={style.donationImage}
-        />
-      </View>
-      <View style={[style.donationInfo]}>
-        <Header title={props.donationTitle} type={3} color={'#0a043c'} />
-        <View style={style.price}>
-          <Header
-            title={'$' + props.price.toFixed(2)}
-            type={3}
-            color={'#156cf7'}
+    <Pressable
+      onPress={() => {
+        props.onPress(props.donationItemId);
+      }}>
+      <View style={style.singleDonationItemContainer}>
+        <View>
+          <View style={style.badgeContainer}>
+            <Badge title={props.badgeTitle} />
+          </View>
+          <Image
+            resizeMode="cover"
+            source={{uri: props.uri}}
+            style={style.donationImage}
           />
         </View>
+        <View style={[style.donationInfo]}>
+          <Header
+            title={props.donationTitle}
+            type={3}
+            color={'#0a043c'}
+            numberOfLines={1}
+          />
+          <View style={style.price}>
+            <Header
+              title={'$' + props.price.toFixed(2)}
+              type={3}
+              color={'#156cf7'}
+            />
+          </View>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 export default SingleDonationItem;
